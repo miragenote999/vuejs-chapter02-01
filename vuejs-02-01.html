@@ -4,10 +4,12 @@
 
 <div id="app">
 <!--    <p>{{ message }}</p>-->
-    <p>{{ items[0].name }}</p>
-    <p>{{ items[2].name }}</p>
+    <p>{{ items[0].name }}: {{ items[0].price }}円 * {{ items[0].quantity }}個 = {{ items[0].price * items[0].quantity }}円</p>
+    <p>{{ items[2].name }}: {{ items[2].price }}円 * {{ items[2].quantity }}個 = {{ items[2].price * items[2].quantity }}円</p>
 </div>
 
+<!--<button id="b-button" v-bind:title="loggedInButton">購入</button>-->
+<button id="b-button" v-bind:disabled="canBuy">購入</button>  <!-- falseの場合、disabled属性自体が削除される(falseが渡されるわけではない) -->
 <script src="app.js"></script>
 <script>
     // ロードされ、Vueがグローバル変数として定義されているか確認
@@ -19,4 +21,14 @@
     //         message: 'Hello...'
     //     }
     // })
+
+    var vm = new Vue({
+        el: '#b-button',
+        // data:{
+        //     loggedInButton: 'ログイン済のため購入できます。'
+        // }
+        data:{
+            canBuy: false
+        }
+    })
 </script>
