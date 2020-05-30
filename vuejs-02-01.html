@@ -3,17 +3,20 @@
 <script src="https://unpkg.com/vue@2.5.17"></script>
 
 <div id="app">
-    {{ message }}
+<!--    <p>{{ message }}</p>-->
+    <p>{{ items[0].name }}</p>
+    <p>{{ items[2].name }}</p>
 </div>
 
+<script src="app.js"></script>
 <script>
     // ロードされ、Vueがグローバル変数として定義されているか確認
     console.assert(typeof Vue !== 'undefined')
 
-    new Vue({
-        el: '#app',
-        data: {
-            message: 'Hello...'
-        }
-    })
+    // new Vue({
+    //     el: '#app',
+    //     data: {
+    //         message: 'Hello...'
+    //     }
+    // })
 </script>
